@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Retab Widgets Demo
 
-## Getting Started
+A Next.js demo application showcasing all [Retab](https://retab.com) React widgets for document extraction workflows.
 
-First, run the development server:
+## Features
+
+- Interactive widget browser with accordion navigation
+- Live preview of all 6 Retab widget components:
+  - **DataComponent** - Display/edit extracted data (form, table, code views)
+  - **FileComponent** - Document preview with PDF rendering
+  - **ExtractionsList** - Browse extractions with search and filters
+  - **ExtractionReviewer** - Complete human-in-the-loop review interface
+  - **ExtractionComponent** - Side-by-side file and data view
+  - **UploadJobsList** - Upload files and track processing
+
+## Setup
+
+### 1. Install dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+bun install
+```
+
+### 2. Configure environment variables
+
+Copy `.env.example` to `.env` and fill in your Retab credentials:
+
+```env
+# Server-side only (get from https://retab.com/dashboard/settings)
+RETAB_API_KEY=sk_retab_xxx
+
+# Client-side
+NEXT_PUBLIC_RETAB_PROJECT_ID=proj_xxx
+NEXT_PUBLIC_RETAB_BASE_URL=https://api.retab.com
+```
+
+### 3. Run the development server
+
+```bash
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the widgets demo.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+├── api/retab/token/route.ts   # Token endpoint for auth
+├── providers.tsx              # RetabProvider (client-side)
+├── layout.tsx                 # Root layout (server-side)
+├── page.tsx                   # Widgets demo page
+└── globals.css
+```
 
-## Learn More
+## Documentation
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Widgets Introduction](https://docs.retab.com/widgets/introduction)
+- [Widgets Reference](https://docs.retab.com/widgets/widgets)
+- [Hooks Reference](https://docs.retab.com/widgets/hooks)
+- [Next.js Quickstart](https://docs.retab.com/widgets/nextjs_quickstart)
