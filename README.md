@@ -9,7 +9,7 @@ A Next.js demo application showcasing all [Retab](https://retab.com) React widge
   - **DataComponent** - Display/edit extracted data (form, table, code views)
   - **FileComponent** - Document preview with PDF rendering
   - **ExtractionsList** - Browse extractions with search and filters
-  - **ExtractionReviewer** - Complete human-in-the-loop review interface
+  - **ExtractionReviewer** - Complete review interface
   - **ExtractionComponent** - Side-by-side file and data view
   - **UploadJobsList** - Upload files and track processing
 
